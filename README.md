@@ -14,6 +14,9 @@ Currently this program only supports wav files. To play a wav file, type:
 ```
 ./sound_view /path/to/sound-file.wav
 ```
+
+<img src="https://raw.githubusercontent.com/marl0ny/colourful-sound-bars/master/musical-colour-bars.gif" />
+
 The upper portion of the window contains the visualization of the sound wave data in time. The colour bars at the bottom correspond to the DFT of the sound data. The height and colour of the colour bars are determined by the magnitude and complex argument of the corresponding DFT amplitudes. Only the positive frequency terms are shown, in ascending order from lower to higher frequency. 
 
 ### Keyboard Controls
