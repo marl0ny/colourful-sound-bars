@@ -13,16 +13,16 @@ typedef double real;
 #define _FFT_H
 
 /*
-* Bit reverse the order in which the elements of a
-* an array with type complex is arranged.
+* Bit reverse the order in which the elements of
+* an array with complex type are arranged.
 * Its length must be of power two.
 *
 * For example, an array with elements in binary form
 * [0b00, 0b01, 0b10, 0b11]
-* becomes
+* become
 * [0b00, 0b10, 0b01, 0b11].
 *
-* z: the pointer to the complex array.
+* z: complex array pointer.
 * n: the number of elements in the complex array.
 */
 void bitreverse2(cmplx *restrict z, int n);
@@ -31,11 +31,11 @@ void bitreverse2(cmplx *restrict z, int n);
 * Iterative in Place Radix-2
 * Cooley-Turkey Fast Fourier Transform Algorithm.
 * Please note that the input array size must be a
-* a power of two - there are no checks on if it isn't.
+* a power of two - there are zero checks on this.
 *
-* z: the pointer to the complex array. This
-* function replaces each element of z with its
-* fft counterpart.
+* z: the pointer to the complex array. Each 
+* element of the array will be replaced by
+* its fft counterpart.
 * n: the size of the complex array, which must be a 
 * power of two.
 * ---------------------------------------------------------------------------
@@ -57,7 +57,7 @@ void bitreverse2(cmplx *restrict z, int n);
 void inplace_fft(cmplx *restrict z, int n);
 
 /*
-* Obtain the corresponding frequencies of the fft output
+* Obtain the corresponding frequencies of the fft output.
 *
 * freq: an array of each frequency that correspond
 * to each element of the fft output.

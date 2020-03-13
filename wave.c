@@ -67,7 +67,7 @@ real wav_get_point(const struct Wav *wav, size_t index) {
 
 
 struct Wav *get_wav(const char *filename) {
-    FILE *file = fopen(filename, "r");
+    FILE *file = fopen(filename, "rb");
     if (file == NULL) {
         fprintf(stderr, "Unable to open file %s: ", filename);
         return NULL;
@@ -125,9 +125,8 @@ void print_wav_info(const struct WavInfo *wav_info) {
 
 void copy_filename(char *filename, const char *path) {
     const char *path2 = path;
-    while(*path2++);
+    for( ; *path2 != '\0'; path2++);
     while(path2 --> path && *path2 != '/');
     path2 = (*path2 == '/')? path2+1: path;
     while((*filename++ = *path2++));
-    *filename = '\0';
 }
