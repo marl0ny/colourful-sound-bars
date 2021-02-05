@@ -1,5 +1,9 @@
 SHELL = /bin/bash
-FLAGS = -O2 -Wall
+
+# COMPILE = /usr/bin/clang
+# FLAGS = -O2 -Wall -g
+COMPILE = /usr/bin/gcc
+FLAGS = -O2 -Wall -g
 
 # Put your own include and lib path for sdl2 here:
 INCLUDE = -I${HOME}/include
@@ -16,10 +20,10 @@ OBJECTS = sound_view.o wave.o fft.o
 all: ${TARGET}
 
 ${TARGET}: ${OBJECTS}
-	cc ${FLAGS} -o $@ $^ ${LIBS}
+	${COMPILE} ${FLAGS} -o $@ $^ ${LIBS}
 
 ${OBJECTS}: ${SOURCES}
-	cc ${FLAGS} -c $^ ${INCLUDE}
+	${COMPILE} ${FLAGS} -c $^ ${INCLUDE}
 
 clean:
 	rm -f *.o ${TARGET}
